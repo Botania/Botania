@@ -1,4 +1,4 @@
-![](web/img/logo.png)  
+﻿![](web/img/logo.png)  
 Welcome to the Botania repository.  
 
 Botania is a [Minecraft](https://minecraft.net/) mod based on adding natural magic to the game. It's inspired by other magic mods, such as [Thaumcraft](http://www.minecraftforum.net/topic/2011841-) or [Blood Magic](http://www.minecraftforum.net/topic/1899223-).  
@@ -8,6 +8,6 @@ The current iteration of Botania for 1.10 is made possible thanks to the massive
 Botania is licensed under the [Botania License](http://botaniamod.net/license.php)
 
 ## Participants <br>
-Erhan Baturay Onural
-Bahadır ÇOLAK
+Erhan Baturay Onural <br>
+Bahadır ÇOLAK <br>
 Mustafa Özcivelek
