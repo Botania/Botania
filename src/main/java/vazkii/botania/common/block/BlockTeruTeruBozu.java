@@ -58,7 +58,7 @@ public class BlockTeruTeruBozu extends BlockMod implements ILexiconable {
 		if(!world.isRemote && e instanceof EntityItem) {
 			EntityItem item = (EntityItem) e;
 			ItemStack stack = item.getItem();
-			if(isSunflower(stack) && removeRain(world) || isBlueOrchid(stack) && startRain(world)) {
+			if(isSunflower(stack) && removeRain(world)) {
 				stack.shrink(1);
 			}
 		}
@@ -67,7 +67,7 @@ public class BlockTeruTeruBozu extends BlockMod implements ILexiconable {
 	@Override
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing s, float xs, float ys, float zs) {
 		ItemStack stack = player.getHeldItem(hand);
-		if(!stack.isEmpty() && (isSunflower(stack) && removeRain(world) || isBlueOrchid(stack) && startRain(world))) {
+		if(!stack.isEmpty() && (isSunflower(stack) && removeRain(world))) {
 			if(!player.capabilities.isCreativeMode)
 				stack.shrink(1);
 			return true;
@@ -84,18 +84,18 @@ public class BlockTeruTeruBozu extends BlockMod implements ILexiconable {
 	}
 
 	private boolean removeRain(World world) {
-		if(world.isRaining()) {
-			world.getWorldInfo().setWorldTime(1000);
-			TileTeruTeruBozu.resetRainTime(world);
+		if(!world.isDaytime()) {
+			world.setWorldTime(1000);
+			//TileTeruTeruBozu.resetRainTime(world);
 			return true;
 		}
 		return false;
 	}
 
 	private boolean startRain(World world) {
-		if(!world.isRaining()) {
+		if(!world.isDaytime()) {
 			if(world.rand.nextInt(10) == 0) {
-				world.getWorldInfo().setWorldTime(12000);
+				world.setWorldTime(12000);
 				TileTeruTeruBozu.resetRainTime(world);
 			}
 			return true;
