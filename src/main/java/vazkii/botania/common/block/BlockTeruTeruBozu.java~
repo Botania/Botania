@@ -86,7 +86,7 @@ public class BlockTeruTeruBozu extends BlockMod implements ILexiconable {
 	private boolean removeRain(World world) {
 		if(!world.isDaytime()) {
 			world.setWorldTime(1000);
-			TileTeruTeruBozu.resetRainTime(world);
+			//TileTeruTeruBozu.resetRainTime(world);
 			return true;
 		}
 		return false;
@@ -96,7 +96,7 @@ public class BlockTeruTeruBozu extends BlockMod implements ILexiconable {
 		if(!world.isDaytime()) {
 			if(world.rand.nextInt(10) == 0) {
 				world.setWorldTime(12000);
-				TileTeruTeruBozu.resetRainTime(world);
+				//TileTeruTeruBozu.resetRainTime(world);
 			}
 			return true;
 		}
