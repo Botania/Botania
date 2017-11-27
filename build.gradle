@@ -247,4 +247,4 @@ curseforge {
     }
 }
 
-defaultTasks 'clean', 'build', 'sort', 'forgecraft', 'incrementBuildNumber', 'curseforge', 'upload'
+defaultTasks 'clean', 'build', 'sort'

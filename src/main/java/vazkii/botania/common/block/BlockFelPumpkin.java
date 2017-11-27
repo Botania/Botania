@@ -84,12 +84,15 @@ public class BlockFelPumpkin extends BlockMod implements ILexiconable {
 			world.notifyNeighborsOfStateChange(pos, Blocks.AIR, false);
 			world.notifyNeighborsOfStateChange(pos.down(), Blocks.AIR, false);
 			world.notifyNeighborsOfStateChange(pos.down(2), Blocks.AIR, false);
+			world.setWorldTime(15000);
+			
 		}
 	}
 
 	@Override
 	public void onBlockPlacedBy(World world, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
 		world.setBlockState(pos, state.withProperty(BotaniaStateProps.CARDINALS, placer.getHorizontalFacing().getOpposite()));
+		world.setWorldTime(15000);
 	}
 
 	@SubscribeEvent
@@ -102,6 +105,7 @@ public class BlockFelPumpkin extends BlockMod implements ILexiconable {
 				if(stack.getItem() == Items.BLAZE_ROD)
 					item.setItem(new ItemStack(Items.BLAZE_POWDER, stack.getCount() * 10));
 			}
+		
 	}
 
 	@Override
